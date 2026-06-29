@@ -15,9 +15,8 @@
 .svc .summary{font-size:16px;line-height:1.55;color:var(--ink-soft);margin-bottom:16px}
 .leader-grid{display:grid;grid-template-columns:180px 1fr;gap:32px;align-items:start;margin-top:18px}
 @media (max-width:640px){.leader-grid{grid-template-columns:1fr}}
-.headshot{width:180px;height:180px;border-radius:16px;background:var(--violet-pale);display:flex;flex-direction:column;
-  align-items:center;justify-content:center;gap:10px;color:var(--violet)}
-.headshot .cap{font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.headshot-img{width:180px;height:180px;border-radius:16px;object-fit:cover;object-position:center top;
+  border:1px solid var(--hair)}
 .leader-bio{font-size:16px;line-height:1.7;color:var(--ink-soft);max-width:60ch}
 .soft-link{color:var(--violet);font-weight:500}
 .soft-link:hover{text-decoration:underline}
@@ -162,17 +161,13 @@
   </section>
 
   <!-- ===== WHO LEADS FAITH LAB ===== -->
-  <!-- TBD from Liz: final approved bio copy and a headshot for Aliza are placeholders, to be replaced before launch. -->
   <section class="section section--mid reveal" aria-label="Who leads Faith Lab">
     <span class="eyebrow"><img class="star" src="assets/star.svg" alt="" />Who leads Faith Lab</span>
     <div class="leader-grid">
-      <div class="headshot" aria-label="Headshot placeholder">
-        <svg class="ripple-glyph" viewBox="0 0 34 34" fill="none" aria-hidden="true" style="width:44px;height:44px"><circle cx="17" cy="17" r="6" fill="#7C6DF5"/><circle cx="17" cy="17" r="11" stroke="#7C6DF5" stroke-opacity=".5"/><circle cx="17" cy="17" r="15.5" stroke="#7C6DF5" stroke-opacity=".25"/></svg>
-        <span class="cap">Headshot to come</span>
-      </div>
+      <img class="headshot-img" src="assets/aliza-goodman.jpg" alt="Aliza Goodman" width="180" height="180" />
       <div>
         <h3 style="font-size:30px">Aliza Goodman</h3>
-        <p class="leader-bio">Aliza Goodman leads Faith Lab, bringing lived expertise inside faith-based and values-driven organizations and a practitioner's instinct for the work of holding difference and repairing trust. She designs and facilitates the experiences that help communities stay connected across what divides them. A fuller bio is on the way.</p>
+        <p class="leader-bio">Aliza Goodman leads Faith Lab. She's a strategic leader in Jewish and Israel education with more than 20 years of experience driving innovation in the field. She recently completed her 16-year tenure at The iCenter for Israel Education, where she led the design, experimentation, and implementation of its professional development offerings, including iCON and Conflicts of Interest. Aliza holds an MBA in Social Policy and Management and an MA in Jewish Professional Leadership from Brandeis University. She lives in Chicago with her husband and three kids.</p>
       </div>
     </div>
   </section>
