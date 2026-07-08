@@ -150,34 +150,35 @@
           <circle class="map-ring" cx="480" cy="260" r="200" stroke-width="1" opacity=".18"/>
           <circle class="map-ring" cx="480" cy="260" r="280" stroke-width="1" opacity=".10"/>
           <image href="assets/ol-mark-white.svg" x="446" y="225" width="68" height="70"/>
+          <!-- Nodes are positioned by JS: they orbit the mark, pausing on hover/focus or while the panel is open -->
           <!-- Faith (live) NE -->
-          <g class="lab-node" data-id="faith" tabindex="0" role="button" aria-label="Faith Lab: live. Open a quick preview.">
-            <circle class="halo" cx="621" cy="119" r="22" stroke-width="1.5"/>
-            <circle class="dot" cx="621" cy="119" r="10" fill="#fff"/>
-            <image href="assets/star.svg" x="632" y="100" width="14" height="14" aria-hidden="true"/>
-            <text class="lab-name" x="621" y="152" text-anchor="middle">Faith Lab</text>
-            <text class="lab-status" x="621" y="170" text-anchor="middle" fill="#B0A6FA">Live</text>
+          <g class="lab-node" data-id="faith" data-angle="-45" tabindex="0" role="button" aria-label="Faith Lab: live. Open a quick preview.">
+            <circle class="halo" cx="0" cy="0" r="22" stroke-width="1.5"/>
+            <circle class="dot" cx="0" cy="0" r="10" fill="#fff"/>
+            <image href="assets/star.svg" x="11" y="-19" width="14" height="14" aria-hidden="true"/>
+            <text class="lab-name" x="0" y="33" text-anchor="middle">Faith Lab</text>
+            <text class="lab-status" x="0" y="51" text-anchor="middle" fill="#B0A6FA">Live</text>
           </g>
           <!-- Impact (in formation) SE -->
-          <g class="lab-node" data-id="impact" tabindex="0" role="button" aria-label="Impact Lab: in formation. Learn more.">
-            <circle class="halo" cx="621" cy="401" r="20" stroke-width="1.5"/>
-            <circle class="dot" cx="621" cy="401" r="8" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="3 3"/>
-            <text class="lab-name" x="621" y="434" text-anchor="middle" opacity=".88">Impact Lab</text>
-            <text class="lab-status" x="621" y="452" text-anchor="middle" fill="#fff" opacity=".5">Coming soon</text>
+          <g class="lab-node" data-id="impact" data-angle="45" tabindex="0" role="button" aria-label="Impact Lab: in formation. Learn more.">
+            <circle class="halo" cx="0" cy="0" r="20" stroke-width="1.5"/>
+            <circle class="dot" cx="0" cy="0" r="8" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <text class="lab-name" x="0" y="33" text-anchor="middle" opacity=".88">Impact Lab</text>
+            <text class="lab-status" x="0" y="51" text-anchor="middle" fill="#fff" opacity=".5">Coming soon</text>
           </g>
           <!-- Policy SW -->
-          <g class="lab-node" data-id="policy" tabindex="0" role="button" aria-label="Policy Lab: in formation. Learn more.">
-            <circle class="halo" cx="339" cy="401" r="20" stroke-width="1.5"/>
-            <circle class="dot" cx="339" cy="401" r="8" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="3 3"/>
-            <text class="lab-name" x="339" y="434" text-anchor="middle" opacity=".88">Policy Lab</text>
-            <text class="lab-status" x="339" y="452" text-anchor="middle" fill="#fff" opacity=".5">Coming soon</text>
+          <g class="lab-node" data-id="policy" data-angle="135" tabindex="0" role="button" aria-label="Policy Lab: in formation. Learn more.">
+            <circle class="halo" cx="0" cy="0" r="20" stroke-width="1.5"/>
+            <circle class="dot" cx="0" cy="0" r="8" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <text class="lab-name" x="0" y="33" text-anchor="middle" opacity=".88">Policy Lab</text>
+            <text class="lab-status" x="0" y="51" text-anchor="middle" fill="#fff" opacity=".5">Coming soon</text>
           </g>
           <!-- Sports NW -->
-          <g class="lab-node" data-id="sports" tabindex="0" role="button" aria-label="Sports Lab: in formation. Learn more.">
-            <circle class="halo" cx="339" cy="119" r="20" stroke-width="1.5"/>
-            <circle class="dot" cx="339" cy="119" r="8" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="3 3"/>
-            <text class="lab-name" x="339" y="152" text-anchor="middle" opacity=".88">Sports Lab</text>
-            <text class="lab-status" x="339" y="170" text-anchor="middle" fill="#fff" opacity=".5">Coming soon</text>
+          <g class="lab-node" data-id="sports" data-angle="225" tabindex="0" role="button" aria-label="Sports Lab: in formation. Learn more.">
+            <circle class="halo" cx="0" cy="0" r="20" stroke-width="1.5"/>
+            <circle class="dot" cx="0" cy="0" r="8" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <text class="lab-name" x="0" y="33" text-anchor="middle" opacity=".88">Sports Lab</text>
+            <text class="lab-status" x="0" y="51" text-anchor="middle" fill="#fff" opacity=".5">Coming soon</text>
           </g>
         </svg>
       </div>
@@ -353,6 +354,35 @@
   x.addEventListener('click',closePanel);
   backdrop.addEventListener('click',closePanel);
   document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&panel.classList.contains('open')) closePanel(); });
+
+  /* ---- orbital rotation: nodes drift around the mark; paused on hover/focus or while the panel is open ---- */
+  (function(){
+    var CX=480, CY=260, R=200, SPEED=6; /* degrees per second */
+    var nodes=Array.prototype.slice.call(document.querySelectorAll('#labMap .lab-node'));
+    if(!nodes.length) return;
+    var offset=0, last=null, hovering=false;
+    var reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function place(){
+      nodes.forEach(function(n){
+        var a=((parseFloat(n.getAttribute('data-angle'))||0)+offset)*Math.PI/180;
+        n.setAttribute('transform','translate('+(CX+R*Math.cos(a)).toFixed(2)+' '+(CY+R*Math.sin(a)).toFixed(2)+')');
+      });
+    }
+    nodes.forEach(function(n){
+      n.addEventListener('mouseenter',function(){ hovering=true; });
+      n.addEventListener('mouseleave',function(){ hovering=false; });
+      n.addEventListener('focus',function(){ hovering=true; });
+      n.addEventListener('blur',function(){ hovering=false; });
+    });
+    function tick(t){
+      if(last===null) last=t;
+      var dt=Math.min((t-last)/1000,.1); last=t;
+      if(!hovering && !panel.classList.contains('open')){ offset=(offset+SPEED*dt)%360; place(); }
+      requestAnimationFrame(tick);
+    }
+    place();
+    if(!reduceMotion) requestAnimationFrame(tick);
+  })();
 })();
 </script>
 </body>
