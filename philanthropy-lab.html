@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Philanthropy Lab · Optimistic Labs</title>
+<meta name="description" content="Philanthropy Lab is a dynamic advisory and activation platform built to serve the full spectrum of the philanthropic ecosystem — from major foundations and philanthropic investors to grassroots NGOs and family and emerging philanthropists." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/brand.css" />
+<style>
+.svc{display:flex;flex-direction:column;gap:18px;margin-top:18px}
+.svc .card{display:flex;flex-direction:column;gap:12px}
+.svc .card h3{margin-bottom:0}
+.svc .card p{font-size:15.5px;line-height:1.62;color:var(--ink-soft)}
+.intro-statement{font-family:var(--serif);font-size:clamp(26px,3.4vw,38px);line-height:1.2;color:var(--ink);margin-bottom:22px;max-width:22ch}
+.prog-group{margin-top:34px}
+.prog-group h3{font-size:24px;margin-bottom:6px}
+.prog-intro{font-family:var(--serif);font-style:italic;font-size:17.5px;line-height:1.55;color:var(--ink-soft);max-width:58ch;margin-bottom:18px}
+.prog-group .card h4{font-family:var(--sans);font-weight:600;font-size:17px;color:var(--ink);margin-bottom:8px}
+.prog-group .card p{font-size:15px;line-height:1.62;color:var(--ink-soft)}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header class="nav">
+  <a class="nav-logo" href="index.html" aria-label="Optimistic Labs home"><img src="assets/ol-logo-white.svg" alt="Optimistic Labs" /></a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="index.html#labs">Our Labs</a>
+    <a href="faith-lab.html">Faith Lab</a>
+    <a href="policy-lab.html">Policy Lab</a>
+    <a href="philanthropy-lab.html">Philanthropy Lab</a>
+    <a href="become-a-lab-leader.html">Become a Lab Leader</a>
+    <a class="pill pill-primary navcta" data-book>Book a call</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+<nav class="sheet" id="sheet" aria-hidden="true">
+  <button class="sheet-x" id="sheetX" aria-label="Close menu">×</button>
+  <a href="index.html#labs">Our Labs</a>
+  <a href="faith-lab.html">Faith Lab</a>
+  <a href="policy-lab.html">Policy Lab</a>
+  <a href="philanthropy-lab.html">Philanthropy Lab</a>
+  <a href="become-a-lab-leader.html">Become a Lab Leader</a>
+  <a class="pill pill-primary navcta" data-book>Book a call</a>
+</nav>
+
+<main>
+  <!-- ===== HERO (light, split, photo-ready) ===== -->
+  <section class="hero-light" aria-label="Philanthropy Lab">
+    <div class="inner2">
+      <div>
+        <span class="eyebrow"><img class="star" src="assets/star.svg" alt="" />Optimistic Labs | Philanthropy</span>
+        <h1 class="display" style="font-size:clamp(38px,5.2vw,60px)">Igniting <em class="em-italic">generosity</em>. Accelerating impact.</h1>
+        <p class="lead">Philanthropy Lab is a dynamic advisory and activation platform built to serve the full spectrum of the philanthropic ecosystem — from major foundations and philanthropic investors to grassroots NGOs and family and emerging philanthropists.</p>
+        <div class="cta-row"><a class="pill pill-primary" data-book>Book a conversation</a></div>
+      </div>
+      <!-- TODO Liz: replace with a real photo of people. <img src="assets/philanthropy-hero.jpg" alt="..."> -->
+      <div class="people-photo" aria-label="Photo placeholder">
+        <div class="ph">
+          <svg width="40" height="40" viewBox="0 0 34 34" fill="none" aria-hidden="true"><circle cx="17" cy="17" r="6" fill="#7C6DF5"/><circle cx="17" cy="17" r="11" stroke="#7C6DF5" stroke-opacity=".5"/><circle cx="17" cy="17" r="15.5" stroke="#7C6DF5" stroke-opacity=".25"/></svg>
+          Photo of people (to come)
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PURPOSE & VISION ===== -->
+  <section class="section section--mid reveal" aria-label="Purpose and vision">
+    <span class="eyebrow"><img class="star" src="assets/star.svg" alt="" />Purpose &amp; vision</span>
+    <div class="intro-statement">The next chapter of philanthropy must be more imaginative, more connected, and more human-centered.</div>
+    <div class="intro-statement" style="margin-top:-6px">And more <em class="em-italic">optimistic</em>.</div>
+    <p style="font-size:17px;line-height:1.7;color:var(--ink-soft);max-width:64ch">We help organizations and individuals across the philanthropic ecosystem amplify their impact through strategic collaboration, storytelling, and systems design — bringing the same rigor and imagination to generosity that other sectors bring to growth.</p>
+  </section>
+
+  <!-- ===== WHO WE WORK WITH ===== -->
+  <section class="section section--mid reveal" aria-label="Who we work with">
+    <span class="eyebrow"><img class="star" src="assets/star.svg" alt="" />Who we work with</span>
+    <h2 class="h-sec">Built for the full spectrum of <em class="em-italic">giving</em>.</h2>
+    <p class="lead" style="max-width:64ch">Philanthropy Lab works with major foundations and philanthropic investors, grassroots NGOs, and family and emerging philanthropists. We're a good fit whether you're a grantmaker rethinking how capital moves, a family exploring values-aligned giving for the first time, or an NGO looking to turn your impact into a story that builds a coalition around it.</p>
+  </section>
+
+  <!-- ===== WHAT WE DO ===== -->
+  <section class="section section--mid reveal" aria-label="What we do">
+    <span class="eyebrow"><img class="star" src="assets/star.svg" alt="" />What we do</span>
+    <h2 class="h-sec">Four ways we work with you.</h2>
+    <div class="svc">
+      <div class="card">
+        <h3>Curiosity &amp; Creativity Development</h3>
+        <p>Innovation labs and design sprints exploring new models of capital deployment, trust-based philanthropy, and future-of-giving trends. We run strategic ideation frameworks to help clients identify bold moonshot ideas and cross-sector experiments, plus AI readiness and adaptability support.</p>
+      </div>
+      <div class="card">
+        <h3>Collaboration Strategy</h3>
+        <p>Support developing coalitions, co-funding partnerships, and collective impact models — including facilitation of ecosystem mapping to identify potential collaborators, aligned capital, and catalytic funding opportunities.</p>
+      </div>
+      <div class="card">
+        <h3>Community Building</h3>
+        <p>Design of fellowships, peer networks, and donor engagement experiences for both institutional and individual givers, along with specialized and inspiring convenings and journeys that foster alignment among funders, grantees, and ecosystem partners.</p>
+      </div>
+      <div class="card">
+        <h3>Content &amp; Storytelling</h3>
+        <p>Strategy and production support for impact narratives, case studies, digital series, and annual reports, plus messaging development for philanthropic campaigns, investment theses, and public influence strategies.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== KEY INITIATIVES ===== -->
+  <section class="section reveal" aria-label="Key initiatives">
+    <span class="eyebrow"><img class="star" src="assets/star.svg" alt="" />Key initiatives</span>
+    <h2 class="h-sec">Signature programs shaping how we work.</h2>
+
+    <div class="prog-group">
+      <h3>For Organizations</h3>
+      <p class="prog-intro">Structured engagements for foundations, nonprofits, and funders ready to move from strategy on paper to strategy in motion.</p>
+      <div class="grid grid-2">
+        <div class="card">
+          <h4>Strategic Clarity &amp; Messaging</h4>
+          <p>Most organizations can list everything they do. Few can say the one thing that makes them essential. We work with your team to find that thing — the core story that explains your value in language funders, boards, and partners actually respond to — and translate it into materials your organization can use immediately.</p>
+        </div>
+        <div class="card">
+          <h4>Discovery &amp; Strategy Design</h4>
+          <p>For organizations entering a real strategic shift — a new agenda, a new theory of change, a next chapter — we run a structured discovery process: stakeholder conversations, synthesis, and a clear set of recommendations. Phase 0 is deliberately scoped and short, so you get direction before you commit to a full strategy build.</p>
+        </div>
+        <div class="card">
+          <h4>Board &amp; Leadership Activation</h4>
+          <p>A retreat should produce conviction, not just consensus. We design board retreats and leadership convenings that turn strategic work your team has already done into something your board feels ownership over — leaving the room ready to act, not just ready to nod.</p>
+        </div>
+        <div class="card">
+          <h4>Place-Based Initiative Design</h4>
+          <p>Regional initiatives focused on helping funders and NGOs collaborate around shared geographies and civic priorities.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="prog-group">
+      <h3>For Donors and Grantmakers</h3>
+      <p class="prog-intro">Focused engagements for individuals and families navigating giving, legacy, and the systems that carry them out.</p>
+      <div class="grid grid-2">
+        <div class="card">
+          <h4>Family Giving Design</h4>
+          <p>Bespoke strategy sessions for multi-generational families exploring values-aligned philanthropy and legacy storytelling.</p>
+        </div>
+        <div class="card">
+          <h4>Funder + Grantee Experience Audits</h4>
+          <p>Tools and coaching to help grantmakers redesign their internal systems for equity, efficiency, and empathy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== THE TEAM ===== -->
+  <section class="section section--mid reveal" aria-label="The team">
+    <span class="eyebrow"><img class="star" src="assets/star.svg" alt="" />The team</span>
+    <p class="lead" style="max-width:64ch">Philanthropy Lab is led directly by Optimistic Labs' co-founders, backed by the full OL team — a trusted network of fractional executives and specialists across strategy, content, and community operations.</p>
+    <div class="team-row">
+      <div class="team-member">
+        <img class="team-photo" src="assets/seth-cohen.jpg" alt="Seth Cohen" width="124" height="124" />
+        <h3>Seth Cohen</h3><div class="team-role">Co-Founder</div>
+        <p>25+ years across media, philanthropy, and civic leadership, most recently Chief Impact Officer at Forbes and founder of the Forbes Impact Lab, and before that a Senior Director at the Charles and Lynn Schusterman Family Philanthropies.</p>
+      </div>
+      <div class="team-member">
+        <img class="team-photo" src="assets/liz-russell.jpg" alt="Liz Russell" width="124" height="124" />
+        <h3>Liz Russell</h3><div class="team-role">Co-Founder</div>
+        <p>14+ years building high-performing teams and scalable systems across SaaS, GovTech, and public-sector consulting. Liz spent nearly five years managing FEMA and HUD disaster-recovery initiatives, overseeing more than $2.6 billion in federal funding, and later led product at Perdix KMS before serving as VP of Customer Success at Forerunner Industries.</p>
+      </div>
+      <div class="team-member">
+        <img class="team-photo" src="assets/aliza-goodman.jpg" alt="Aliza Goodman" width="124" height="124" />
+        <h3>Aliza Goodman</h3><div class="team-role">Contributor</div>
+        <p>Two decades spent building the professional development infrastructure of a national nonprofit funded by leading Jewish philanthropic institutions. Over a 16-year tenure, Aliza designed, tested, and scaled the organization's flagship programming — work built to satisfy funders' expectations for measurable, field-wide impact while staying genuinely useful to the practitioners in the room. She holds an MBA in Social Policy and Management and an MA in Jewish Professional Leadership from Brandeis University.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="band reveal" aria-label="Let's start with a conversation">
+    <div class="hero-ripples" aria-hidden="true">
+      <svg viewBox="0 0 1200 1200" preserveAspectRatio="xMidYMid meet">
+        <circle class="ring r1" cx="600" cy="600" r="150" stroke-width="1.5"/>
+        <circle class="ring r2" cx="600" cy="600" r="300" stroke-width="1.5"/>
+        <circle class="ring r3" cx="600" cy="600" r="450" stroke-width="1.5"/>
+        <circle class="ring r4" cx="600" cy="600" r="600" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div class="inner" style="position:relative;z-index:2">
+      <h2>Let's start with a conversation.</h2>
+      <p>Every engagement begins with a call: no agenda, no pitch. Just a chance to understand where your organization is and whether Philanthropy Lab is the right fit.</p>
+      <div class="cta-row" style="justify-content:center"><a class="pill pill-primary" data-book>Book a call with Liz &amp; Seth</a></div>
+    </div>
+  </section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="inner">
+    <div>
+      <a class="footer-logo" href="index.html" aria-label="Optimistic Labs home"><img src="assets/ol-logo-white.svg" alt="Optimistic Labs" /></a>
+      <div class="footer-tag">Trust is the <em class="em-italic">advantage.</em></div>
+      <div class="footer-loc">Built from Atlanta, GA and Syracuse, NY.</div>
+    </div>
+    <div class="footer-links">
+      <a data-book>Book a call</a>
+      <a href="faith-lab.html">Faith Lab</a>
+      <a href="policy-lab.html">Policy Lab</a>
+      <a href="philanthropy-lab.html">Philanthropy Lab</a>
+      <a href="become-a-lab-leader.html">Become a Lab Leader</a>
+      <a id="linkedInLink">LinkedIn</a>
+    </div>
+    <div class="footer-sign">© 2026 Optimistic Labs · Built with ❤️</div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
