@@ -52,8 +52,8 @@ p{max-width:64ch}
 /* ---------- nav ---------- */
 .nav{position:sticky;top:0;left:0;width:100%;height:var(--nav-h);z-index:60;background:var(--violet-deep);
   display:flex;align-items:center;gap:28px;padding:0 28px}
-.nav-logo{height:34px;display:flex;align-items:center}
-.nav-logo img{height:34px;width:auto}
+.nav-logo{height:48px;display:flex;align-items:center}
+.nav-logo img{height:48px;width:auto}
 .nav-links{margin-left:auto;display:flex;align-items:center;gap:26px}
 .nav-links a{font-family:var(--sans);font-weight:500;font-size:14px;color:rgba(255,255,255,.86);transition:color .2s}
 .nav-links a:hover{color:#fff}
