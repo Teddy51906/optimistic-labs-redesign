@@ -24,14 +24,17 @@ h1,h2,h3{font-weight:700;letter-spacing:-.015em}
 /* case for community */
 .case-p{font-size:17px;line-height:1.7;color:var(--ink-soft);max-width:64ch;margin-top:16px}
 .case-p:first-of-type{margin-top:0}
-.belief-close{margin-top:32px;font-family:var(--sans);font-weight:600;font-size:clamp(20px,2.8vw,25px);line-height:1.4;color:var(--ink);max-width:none}
+.belief-statement{max-width:1080px;padding-top:0}
+.statement-big{font-family:var(--head);font-weight:400;line-height:1.08;letter-spacing:.01em;color:var(--ink);font-size:clamp(44px,8.2vw,108px)}
+.statement-sub{font-family:var(--head);font-weight:400;line-height:1.15;letter-spacing:.01em;color:var(--ink);font-size:clamp(28px,4.8vw,62px);margin-top:20px}
+.statement-sub .em-italic{font-size:1.12em;line-height:1}
 
 /* how we work pillars */
 .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:38px 34px;margin-top:38px;text-align:center}
 @media (max-width:760px){.pillars{grid-template-columns:1fr;gap:42px}}
 .pillar{display:flex;flex-direction:column;align-items:center}
 .pillar-icon{height:54px;width:auto;margin-bottom:20px}
-.pillar-title{font-family:var(--serif);font-style:italic;font-size:23px;color:var(--ink);margin-bottom:12px}
+.pillar-title{font-family:var(--serif);font-style:italic;font-size:23px;line-height:1.15;white-space:nowrap;color:var(--ink);margin-bottom:12px}
 .pillar p{font-size:15px;line-height:1.62;color:var(--ink-soft);max-width:36ch;margin:0 auto}
 
 /* team carousel + note */
@@ -136,7 +139,12 @@ h1,h2,h3{font-weight:700;letter-spacing:-.015em}
     <p class="case-p">When people feel connected to a mission, a network, or a shared purpose, something powerful happens. Loyalty deepens. Ideas move faster. Growth becomes more resilient.</p>
     <p class="case-p">But this trust doesn&rsquo;t just appear on accident.</p>
     <p class="case-p">It requires the right strategy, the right tools, and the right people working together to cultivate purpose, knowledge, and curiosity.</p>
-    <p class="belief-close">Community building is not a side project. Community has to be <em class="em-italic">designed</em>.</p>
+  </section>
+
+  <!-- ===== BELIEF STATEMENT ===== -->
+  <section class="section belief-statement reveal" aria-label="Community has to be designed">
+    <p class="statement-big">Community building is not a side project.</p>
+    <p class="statement-sub">Community has to be <em class="em-italic">designed</em>.</p>
   </section>
 
   <!-- ===== PILLARS ===== -->
@@ -323,7 +331,7 @@ h1,h2,h3{font-weight:700;letter-spacing:-.015em}
       <a href="become-a-lab-leader.html">Become a Lab Leader</a>
       <a id="linkedInLink">LinkedIn</a>
     </div>
-    <div class="footer-sign">© 2026 Optimistic Labs · Built with ❤️</div>
+    <div class="footer-sign">© 2026 Optimistic Labs · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a> · Built with ❤️</div>
   </div>
 </footer>
 
@@ -436,6 +444,26 @@ h1,h2,h3{font-weight:700;letter-spacing:-.015em}
     place();
     if(!reduceMotion) requestAnimationFrame(tick);
   })();
+})();
+
+/* ---- pillar titles: size each so it spans the width of its paragraph ---- */
+(function(){
+  var pillars=Array.prototype.slice.call(document.querySelectorAll('.pillars .pillar'));
+  if(!pillars.length) return;
+  function fit(){
+    pillars.forEach(function(pl){
+      var t=pl.querySelector('.pillar-title'), p=pl.querySelector('p');
+      if(!t||!p) return;
+      t.style.fontSize='';
+      var target=p.getBoundingClientRect().width, w=t.getBoundingClientRect().width;
+      if(w>0&&target>0) t.style.fontSize=(parseFloat(getComputedStyle(t).fontSize)*target/w).toFixed(2)+'px';
+    });
+  }
+  var raf=null;
+  window.addEventListener('resize',function(){ cancelAnimationFrame(raf); raf=requestAnimationFrame(fit); });
+  fit();
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fit);
+  window.addEventListener('load',fit);
 })();
 </script>
 </body>
