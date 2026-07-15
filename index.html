@@ -151,17 +151,17 @@
     <p class="lead" style="max-width:100%">We help organizations move beyond scattered tactics and build communities intentionally, connecting strategy, technology, and trusted networks to create ecosystems where people actually want to participate.</p>
     <div class="pillars">
       <div class="pillar">
-        <img class="pillar-icon" src="assets/icons/icon-lightbulb.svg" alt="" />
+        <img class="pillar-icon" src="assets/icons/icon-lightbulb.png" alt="" />
         <div class="pillar-title">Strategy</div>
         <p>We work alongside leaders as strategic partners, helping clarify goals, design community strategy, and navigate how emerging technologies like AI can support smarter, more connected organizations.</p>
       </div>
       <div class="pillar">
-        <img class="pillar-icon" src="assets/icons/icon-flask.svg" alt="" />
+        <img class="pillar-icon" src="assets/icons/icon-beaker.png" alt="" />
         <div class="pillar-title">Experimentation</div>
         <p>Community building is not a static playbook. It evolves. Together, we test ideas, build prototypes, launch initiatives, and refine what works, turning strategy into real-world momentum.</p>
       </div>
       <div class="pillar">
-        <img class="pillar-icon" src="assets/icons/icon-network.svg" alt="" />
+        <img class="pillar-icon" src="assets/icons/icon-network.png" alt="" />
         <div class="pillar-title">Trusted Networks</div>
         <p>When organizations need specialized support, we connect them with the right people from across our ecosystem of collaborators, operators, creators, and builders.</p>
       </div>
@@ -448,17 +448,20 @@
   var pillars=Array.prototype.slice.call(document.querySelectorAll('.pillars .pillar'));
   if(!pillars.length) return;
   function fit(){
-    var titles=[];
+    var entries=[];
     pillars.forEach(function(pl){
       var t=pl.querySelector('.pillar-title'), p=pl.querySelector('p');
       if(!t||!p) return;
       t.style.fontSize=''; t.style.height='';
       var target=p.getBoundingClientRect().width, w=t.getBoundingClientRect().width;
-      if(w>0&&target>0) t.style.fontSize=(parseFloat(getComputedStyle(t).fontSize)*target/w).toFixed(2)+'px';
-      titles.push(t);
+      if(w>0&&target>0) entries.push({t:t, size:parseFloat(getComputedStyle(t).fontSize)*target/w});
     });
-    var maxH=Math.max.apply(null,titles.map(function(t){ return t.getBoundingClientRect().height; }));
-    titles.forEach(function(t){ t.style.height=maxH.toFixed(2)+'px'; });
+    if(!entries.length) return;
+    /* short words would fit at a huge size; cap them near the smallest fitted size so the row stays even */
+    var cap=Math.min.apply(null,entries.map(function(e){ return e.size; }))*1.1;
+    entries.forEach(function(e){ e.t.style.fontSize=Math.min(e.size,cap).toFixed(2)+'px'; });
+    var maxH=Math.max.apply(null,entries.map(function(e){ return e.t.getBoundingClientRect().height; }));
+    entries.forEach(function(e){ e.t.style.height=maxH.toFixed(2)+'px'; });
   }
   var raf=null;
   window.addEventListener('resize',function(){ cancelAnimationFrame(raf); raf=requestAnimationFrame(fit); });
