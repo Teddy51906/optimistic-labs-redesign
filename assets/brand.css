@@ -84,7 +84,7 @@ p{max-width:64ch}
 .nav-dd-panel::before{content:'';position:absolute;top:-14px;left:0;right:0;height:14px} /* keeps hover alive between trigger and panel */
 .nav-dd-grid{display:grid;grid-template-columns:200px 1fr;gap:10px}
 .nav-dd-feature{display:flex;flex-direction:column;justify-content:flex-end;gap:8px;border-radius:12px;padding:20px 18px;
-  background:linear-gradient(165deg,var(--violet-deep),var(--violet));transition:filter .2s}
+  background:var(--violet-deep);transition:filter .2s}
 .nav-dd-feature:hover{filter:brightness(1.07)}
 .nav-dd-feature img{width:30px;height:30px;margin-bottom:26px}
 .nav-dd-feature-title{font-family:var(--head);font-weight:700;font-size:17px;line-height:1.2;color:#fff}
