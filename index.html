@@ -68,13 +68,7 @@
 .team-cards-track .team-card{width:min(350px,80vw)}
 .team-note--wide{max-width:none;font-size:17.5px;line-height:1.65;margin-top:14px}
 
-/* labs band */
-.labs.band{text-align:left;padding:80px 32px}
-.labs .inner{max-width:1400px}
-.labs h2,.labs .lead{text-align:left}
-.labs .lead{color:rgba(255,255,255,.8);max-width:none;margin-bottom:8px}
-.labs-split{display:grid;grid-template-columns:.6fr 1.4fr;gap:48px;align-items:center}
-@media (max-width:860px){.labs-split{grid-template-columns:1fr;gap:6px}}
+/* lab map (hero) */
 .map-wrap{position:relative}
 #labMap{display:block;width:100%;height:auto}
 .map-ring{fill:none;stroke:#fff}
@@ -169,95 +163,16 @@
 <main>
   <!-- ===== HERO ===== -->
   <section class="hero" id="hero" aria-label="Trust is the advantage">
-    <div class="hero-ripples" aria-hidden="true">
-      <svg viewBox="0 0 1200 1200" preserveAspectRatio="xMidYMid meet">
-        <circle class="ring r1" cx="600" cy="600" r="150" stroke-width="1.5"/>
-        <circle class="ring r2" cx="600" cy="600" r="300" stroke-width="1.5"/>
-        <circle class="ring r3" cx="600" cy="600" r="450" stroke-width="1.5"/>
-        <circle class="ring r4" cx="600" cy="600" r="600" stroke-width="1.5"/>
-      </svg>
-    </div>
-    <div class="inner">
-      <img class="hero-emblem" src="assets/ol-mark-white.svg" alt="" />
-      <h1 class="display">In the age of AI, trust is the <em class="em-italic">advantage</em>.</h1>
-      <p class="lead">We help organizations build communities that make their brands stronger, their growth stickier, and their strategy more human.</p>
-      <div class="cta-row">
-        <a class="pill pill-primary" data-book>Book a call</a>
-        <a class="pill pill-outline" href="#labs">Explore our labs</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== BELIEF ===== -->
-  <section class="section section--mid reveal" id="belief" aria-label="The case for community">
-    <span class="eyebrow"><img class="star" src="assets/star.svg" alt="" />The case for community</span>
-    <p class="case-p">Optimistic Labs was built on a simple observation: The organizations that thrive through recessions, trade wars, pandemics, and major technology shifts are the ones that build communities, not just brands.</p>
-    <p class="case-p">When people feel connected to a mission, a network, or a shared purpose, something powerful happens. Loyalty deepens. Ideas move faster. Growth becomes more resilient.</p>
-    <p class="case-p">But this trust doesn&rsquo;t just appear on accident.</p>
-    <p class="case-p">It requires the right strategy, the right tools, and the right people working together to cultivate purpose, knowledge, and curiosity.</p>
-  </section>
-
-  <!-- ===== BELIEF STATEMENT (community-building banner) =====
-       Liz: banner copy lives ONLY in the two headline lines inside .belief-copy below:
-       the italic tagline (h2.belief-tagline) and the big statement (h1.statement-sub,
-       whose rotating words are the .word-cycle-word spans + the .sr-only fallback).
-       If the wording changes, also update the aria-label on this section and the phrase
-       "Community has to be designed." in this file's <meta name="description"> up top. -->
-  <section class="section belief-statement reveal" aria-label="Community has to be designed">
-    <!-- TODO Liz: replace with a real square photo. -->
-    <div class="belief-photo" aria-label="Photo placeholder">
-      <div class="ph">
-        <svg width="40" height="40" viewBox="0 0 34 34" fill="none" aria-hidden="true"><circle cx="17" cy="17" r="6" fill="#7C6DF5"/><circle cx="17" cy="17" r="11" stroke="#7C6DF5" stroke-opacity=".5"/><circle cx="17" cy="17" r="15.5" stroke="#7C6DF5" stroke-opacity=".25"/></svg>
-        Photo (to come)
-      </div>
-    </div>
-    <div class="belief-copy">
-      <h2 class="case-statement belief-tagline">Community building is<br />not a side project.</h2>
-      <h1 class="statement-sub">Community has<br />to be <span class="word-cycle" aria-hidden="true"><span class="word-cycle-word">designed.</span><span class="word-cycle-word">intentional.</span><span class="word-cycle-word">engineered.</span><span class="word-cycle-word">crafted.</span></span><span class="sr-only">designed.</span></h1>
-    </div>
-    <!-- TODO Liz: replace with a real skinny photo (same image as the left, cropped, to read as one continuous photo interrupted by the text). -->
-    <div class="belief-photo belief-photo-right" aria-label="Photo placeholder">
-      <div class="ph">
-        <svg width="28" height="28" viewBox="0 0 34 34" fill="none" aria-hidden="true"><circle cx="17" cy="17" r="6" fill="#7C6DF5"/><circle cx="17" cy="17" r="11" stroke="#7C6DF5" stroke-opacity=".5"/><circle cx="17" cy="17" r="15.5" stroke="#7C6DF5" stroke-opacity=".25"/></svg>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== PILLARS ===== -->
-  <section class="section section--mid reveal" id="approach" aria-label="How we work">
-    <span class="eyebrow"><img class="star" src="assets/star.svg" alt="" />How we work</span>
-    <h2 class="h-sec">That&rsquo;s where <em class="em-italic">Optimistic Labs</em> comes in.</h2>
-    <p class="lead" style="max-width:100%">We help organizations move beyond scattered tactics and build communities intentionally, connecting strategy, technology, and trusted networks to create ecosystems where people actually want to participate.</p>
-    <div class="pillars">
-      <div class="pillar">
-        <img class="pillar-icon" src="assets/icons/icon-lightbulb.png" alt="" />
-        <div class="pillar-title">Strategic Design</div>
-        <p>We work alongside leaders as strategic partners, clarifying goals, designing communities, and navigating how emerging technologies like AI can support smarter, more connected organizations.</p>
-      </div>
-      <div class="pillar">
-        <img class="pillar-icon" src="assets/icons/icon-beaker.png" alt="" />
-        <div class="pillar-title">Experimentation</div>
-        <p>Community building is not a static playbook. It evolves. Together, we test ideas, build prototypes, launch initiatives, and refine what works, turning strategy into real-world momentum.</p>
-      </div>
-      <div class="pillar">
-        <img class="pillar-icon" src="assets/icons/icon-network.png" alt="" />
-        <div class="pillar-title">Trusted Networks</div>
-        <p>When organizations need specialized support, we connect them with the right people from across our ecosystem of collaborators, operators, creators, and builders.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== LABS MAP ===== -->
-  <section class="labs band reveal" id="labs" aria-label="Our labs">
-    <div class="inner">
-      <div class="labs-split">
-        <div class="labs-copy">
-          <span class="eyebrow"><img class="star" src="assets/star.svg" alt="" />Our labs</span>
-          <h2 class="h-sec">An <em class="em-italic">ecosystem</em>,<br />not an org chart.</h2>
-          <p class="lead">Optimistic Labs is a network of focused labs: each one a practice led by an expert, serving a specific community, with our strategy and apparatus behind it. Click a lab to explore.</p>
-          <div class="legend"><b>Filled</b> = live &nbsp;·&nbsp; <b>Outlined</b> = lab leader needed</div>
+    <div class="inner2">
+      <div class="hero-copy">
+        <h1 class="display">In the age of AI, trust is the <em class="em-italic">advantage</em>.</h1>
+        <p class="lead">We help organizations build communities that make their brands stronger, their growth stickier, and their strategy more human.</p>
+        <div class="cta-row">
+          <a class="pill pill-primary" data-book>Book a call</a>
         </div>
-        <div class="map-wrap">
+        <div class="legend"><b>Filled</b> = live &nbsp;·&nbsp; <b>Outlined</b> = lab leader needed &nbsp;·&nbsp; Click a lab to explore</div>
+      </div>
+      <div class="map-wrap" id="labs">
         <svg id="labMap" viewBox="0 0 600 600" role="group" aria-label="Our labs: Faith, Policy, Philanthropy, Sports, Customer Success, AI, Workforce, and Food, arranged around the Optimistic Labs mark in orbiting rings. Activate a lab to learn more.">
           <circle class="map-ring" cx="300" cy="300" r="70" stroke-width="1" opacity=".30"/>
           <circle class="map-ring" cx="300" cy="300" r="140" stroke-width="1" opacity=".18"/>
@@ -342,7 +257,65 @@
             </g>
           </g>
         </svg>
-        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BELIEF ===== -->
+  <section class="section section--mid reveal" id="belief" aria-label="The case for community">
+    <span class="eyebrow"><img class="star" src="assets/star.svg" alt="" />The case for community</span>
+    <p class="case-p">Optimistic Labs was built on a simple observation: The organizations that thrive through recessions, trade wars, pandemics, and major technology shifts are the ones that build communities, not just brands.</p>
+    <p class="case-p">When people feel connected to a mission, a network, or a shared purpose, something powerful happens. Loyalty deepens. Ideas move faster. Growth becomes more resilient.</p>
+    <p class="case-p">But this trust doesn&rsquo;t just appear on accident.</p>
+    <p class="case-p">It requires the right strategy, the right tools, and the right people working together to cultivate purpose, knowledge, and curiosity.</p>
+  </section>
+
+  <!-- ===== BELIEF STATEMENT (community-building banner) =====
+       Liz: banner copy lives ONLY in the two headline lines inside .belief-copy below:
+       the italic tagline (h2.belief-tagline) and the big statement (h1.statement-sub,
+       whose rotating words are the .word-cycle-word spans + the .sr-only fallback).
+       If the wording changes, also update the aria-label on this section and the phrase
+       "Community has to be designed." in this file's <meta name="description"> up top. -->
+  <section class="section belief-statement reveal" aria-label="Community has to be designed">
+    <!-- TODO Liz: replace with a real square photo. -->
+    <div class="belief-photo" aria-label="Photo placeholder">
+      <div class="ph">
+        <svg width="40" height="40" viewBox="0 0 34 34" fill="none" aria-hidden="true"><circle cx="17" cy="17" r="6" fill="#7C6DF5"/><circle cx="17" cy="17" r="11" stroke="#7C6DF5" stroke-opacity=".5"/><circle cx="17" cy="17" r="15.5" stroke="#7C6DF5" stroke-opacity=".25"/></svg>
+        Photo (to come)
+      </div>
+    </div>
+    <div class="belief-copy">
+      <h2 class="case-statement belief-tagline">Community building is<br />not a side project.</h2>
+      <h1 class="statement-sub">Community has<br />to be <span class="word-cycle" aria-hidden="true"><span class="word-cycle-word">designed.</span><span class="word-cycle-word">intentional.</span><span class="word-cycle-word">engineered.</span><span class="word-cycle-word">crafted.</span></span><span class="sr-only">designed.</span></h1>
+    </div>
+    <!-- TODO Liz: replace with a real skinny photo (same image as the left, cropped, to read as one continuous photo interrupted by the text). -->
+    <div class="belief-photo belief-photo-right" aria-label="Photo placeholder">
+      <div class="ph">
+        <svg width="28" height="28" viewBox="0 0 34 34" fill="none" aria-hidden="true"><circle cx="17" cy="17" r="6" fill="#7C6DF5"/><circle cx="17" cy="17" r="11" stroke="#7C6DF5" stroke-opacity=".5"/><circle cx="17" cy="17" r="15.5" stroke="#7C6DF5" stroke-opacity=".25"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PILLARS ===== -->
+  <section class="section section--mid reveal" id="approach" aria-label="How we work">
+    <span class="eyebrow"><img class="star" src="assets/star.svg" alt="" />How we work</span>
+    <h2 class="h-sec">That&rsquo;s where <em class="em-italic">Optimistic Labs</em> comes in.</h2>
+    <p class="lead" style="max-width:100%">We help organizations move beyond scattered tactics and build communities intentionally, connecting strategy, technology, and trusted networks to create ecosystems where people actually want to participate.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <img class="pillar-icon" src="assets/icons/icon-lightbulb.png" alt="" />
+        <div class="pillar-title">Strategic Design</div>
+        <p>We work alongside leaders as strategic partners, clarifying goals, designing communities, and navigating how emerging technologies like AI can support smarter, more connected organizations.</p>
+      </div>
+      <div class="pillar">
+        <img class="pillar-icon" src="assets/icons/icon-beaker.png" alt="" />
+        <div class="pillar-title">Experimentation</div>
+        <p>Community building is not a static playbook. It evolves. Together, we test ideas, build prototypes, launch initiatives, and refine what works, turning strategy into real-world momentum.</p>
+      </div>
+      <div class="pillar">
+        <img class="pillar-icon" src="assets/icons/icon-network.png" alt="" />
+        <div class="pillar-title">Trusted Networks</div>
+        <p>When organizations need specialized support, we connect them with the right people from across our ecosystem of collaborators, operators, creators, and builders.</p>
       </div>
     </div>
   </section>
