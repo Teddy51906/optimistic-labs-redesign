@@ -150,6 +150,7 @@ p{max-width:64ch}
 .svc-card-head h3{font-size:clamp(22px,1.9vw,28px);line-height:1.12}
 .svc-card-body{padding:26px 30px 30px;display:flex;flex-direction:column;flex:1}
 .svc-card-body p{font-size:16px;line-height:1.65;color:var(--ink-soft)}
+.svc--4{grid-template-columns:repeat(2,1fr)}
 
 /* ---------- principles (sticky-intro + numbered rows) ----------
    Props, set as CSS custom properties on .principles-grid:
