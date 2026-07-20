@@ -120,8 +120,8 @@
               '</button>';
             }).join('')+
           '</div>'+
-          '<p class="svc-blurb" id="svc-blurb" aria-live="polite"></p>'+
         '</div>'+
+        '<p class="svc-blurb" id="svc-blurb" aria-live="polite"></p>'+
         '<div class="svc svc--4" id="svc-panel-cards" role="tabpanel"></div>';
 
       var tabs = Array.prototype.slice.call(root.querySelectorAll('.svc-tab'));
