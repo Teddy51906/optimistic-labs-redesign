@@ -319,10 +319,10 @@ p{max-width:64ch}
 /* ---------- hero / bands ---------- */
 .hero{position:relative;background:var(--violet-deep);color:#fff;overflow:hidden;
   padding:96px 32px 64px;text-align:center}
-.hero .hero-copy{position:relative;z-index:2;max-width:720px;margin:0 auto;
+.hero .hero-copy{position:relative;z-index:2;max-width:800px;margin:0 auto;
   display:flex;flex-direction:column;align-items:center;gap:18px}
 .hero h1{color:#fff;font-size:clamp(36px,4.6vw,58px)}
-.hero .lead{color:rgba(255,255,255,.82);max-width:520px;margin:0}
+.hero .lead{color:rgba(255,255,255,.82);max-width:740px;margin:0}
 .hero-ripples{position:absolute;inset:0;z-index:1;pointer-events:none;display:flex;align-items:center;justify-content:center}
 .hero-ripples svg{width:min(1100px,160%);height:auto;opacity:.5}
 .hero .ring,.band .ring{fill:none;stroke:#fff;transform-box:fill-box;transform-origin:center}
