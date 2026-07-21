@@ -181,7 +181,7 @@
           <!-- Nodes are positioned by JS: three evenly-spaced concentric rings, each orbiting at
                its own speed (the middle ring runs counter to the inner and outer ones), pausing
                on hover/focus or while the panel is open -->
-          <!-- Faith (live) — ring 0 -->
+          <!-- Faith (live) - ring 0 -->
           <g class="lab-node" data-id="faith" data-ring="0" data-phase="-45" data-safe-hw="41" tabindex="0" role="button" aria-label="Faith Lab: live. Open a quick preview.">
             <g class="node-inner">
               <circle class="halo" cx="0" cy="0" r="22" stroke-width="1.5"/>
@@ -191,7 +191,7 @@
               <text class="lab-status" x="0" y="51" text-anchor="middle" fill="#B0A6FA">Live</text>
             </g>
           </g>
-          <!-- Policy (live) — ring 1 -->
+          <!-- Policy (live) - ring 1 -->
           <g class="lab-node" data-id="policy" data-ring="1" data-phase="0" data-safe-hw="45" tabindex="0" role="button" aria-label="Policy Lab: live. Open a quick preview.">
             <g class="node-inner">
               <circle class="halo" cx="0" cy="0" r="22" stroke-width="1.5"/>
@@ -201,7 +201,7 @@
               <text class="lab-status" x="0" y="51" text-anchor="middle" fill="#B0A6FA">Live</text>
             </g>
           </g>
-          <!-- Philanthropy (live) — ring 1 -->
+          <!-- Philanthropy (live) - ring 1 -->
           <g class="lab-node" data-id="philanthropy" data-ring="1" data-phase="120" data-safe-hw="66" tabindex="0" role="button" aria-label="Philanthropy Lab: live. Open a quick preview.">
             <g class="node-inner">
               <circle class="halo" cx="0" cy="0" r="22" stroke-width="1.5"/>
@@ -211,7 +211,7 @@
               <text class="lab-status" x="0" y="51" text-anchor="middle" fill="#B0A6FA">Live</text>
             </g>
           </g>
-          <!-- AI (lab leader needed) — ring 1 -->
+          <!-- AI (lab leader needed) - ring 1 -->
           <g class="lab-node" data-id="ai" data-ring="1" data-phase="240" data-safe-hw="76" tabindex="0" role="button" aria-label="AI Lab: lab leader needed. Learn more.">
             <g class="node-inner">
               <circle class="halo" cx="0" cy="0" r="20" stroke-width="1.5"/>
@@ -220,7 +220,7 @@
               <text class="lab-status lab-status--needed" x="0" y="51" text-anchor="middle">Lab Leader Needed</text>
             </g>
           </g>
-          <!-- Sports (lab leader needed) — ring 2 -->
+          <!-- Sports (lab leader needed) - ring 2 -->
           <g class="lab-node" data-id="sports" data-ring="2" data-phase="45" data-safe-hw="76" tabindex="0" role="button" aria-label="Sports Lab: lab leader needed. Learn more.">
             <g class="node-inner">
               <circle class="halo" cx="0" cy="0" r="20" stroke-width="1.5"/>
@@ -229,7 +229,7 @@
               <text class="lab-status lab-status--needed" x="0" y="51" text-anchor="middle">Lab Leader Needed</text>
             </g>
           </g>
-          <!-- Workforce (lab leader needed) — ring 2 -->
+          <!-- Workforce (lab leader needed) - ring 2 -->
           <g class="lab-node" data-id="workforce" data-ring="2" data-phase="135" data-safe-hw="76" tabindex="0" role="button" aria-label="Workforce Lab: lab leader needed. Learn more.">
             <g class="node-inner">
               <circle class="halo" cx="0" cy="0" r="20" stroke-width="1.5"/>
@@ -238,7 +238,7 @@
               <text class="lab-status lab-status--needed" x="0" y="51" text-anchor="middle">Lab Leader Needed</text>
             </g>
           </g>
-          <!-- Food (lab leader needed) — ring 2 -->
+          <!-- Food (lab leader needed) - ring 2 -->
           <g class="lab-node" data-id="food" data-ring="2" data-phase="225" data-safe-hw="76" tabindex="0" role="button" aria-label="Food Lab: lab leader needed. Learn more.">
             <g class="node-inner">
               <circle class="halo" cx="0" cy="0" r="20" stroke-width="1.5"/>
@@ -247,7 +247,7 @@
               <text class="lab-status lab-status--needed" x="0" y="51" text-anchor="middle">Lab Leader Needed</text>
             </g>
           </g>
-          <!-- Customer Success (lab leader needed) — ring 2 -->
+          <!-- Customer Success (lab leader needed) - ring 2 -->
           <g class="lab-node" data-id="customer-success" data-ring="2" data-phase="315" data-safe-hw="83" tabindex="0" role="button" aria-label="Customer Success Lab: lab leader needed. Learn more.">
             <g class="node-inner">
               <circle class="halo" cx="0" cy="0" r="20" stroke-width="1.5"/>
@@ -521,7 +521,7 @@
   document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&panel.classList.contains('open')) closePanel(); });
 
   /* ---- orbital rotation: three evenly-spaced concentric rings, each orbiting at its own
-         speed — the middle ring runs opposite the inner and outer ones. Paused on hover/focus
+         speed - the middle ring runs opposite the inner and outer ones. Paused on hover/focus
          or while the panel is open. ---- */
   (function(){
     var CX=300, CY=300;
@@ -533,7 +533,7 @@
     ];
     var nodes=Array.prototype.slice.call(document.querySelectorAll('#labMap .lab-node'));
     if(!nodes.length) return;
-    /* Each node just orbits its own ring at that ring's constant speed — no per-frame collision
+    /* Each node just orbits its own ring at that ring's constant speed - no per-frame collision
        correction. Plain, predictable, and perfectly smooth. */
     nodes.forEach(function(n){
       n._ring=RINGS[parseInt(n.getAttribute('data-ring'),10)||0];
