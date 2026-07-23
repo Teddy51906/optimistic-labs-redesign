@@ -15,6 +15,11 @@
   --ease-ripple:cubic-bezier(.34,1.2,.64,1);
   --nav-h:68px; --focus:var(--violet);
   --display:clamp(44px,7vw,82px); --h-sec:clamp(32px,4.6vw,52px); --h3:clamp(21px,2.2vw,27px);
+
+  /* ---- dark-surface tokens ("Nocturne") — for one-off dark pages like thank-you.html ---- */
+  --noir-bg:#161826; --noir-surface:#232532; --noir-text:#e9e9ed;
+  --noir-text-muted:rgba(233,233,237,.6); --noir-hair:rgba(233,233,237,.16);
+  --noir-accent:var(--violet); --noir-accent-tint:var(--violet-light); --noir-accent-deep:#2b2741;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:clip;scroll-padding-top:calc(var(--nav-h) + 16px)}
@@ -445,6 +450,12 @@ p{max-width:64ch}
 .news-form input{flex:1 1 240px}
 .note{font-family:var(--sans);font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--violet);opacity:0;transition:opacity .3s;margin-top:12px}
 .note.show{opacity:1}
+
+.form-error{display:none;flex-direction:column;align-items:flex-start;gap:10px;margin-top:14px;
+  padding:16px 18px;border-radius:12px;background:rgba(162,59,42,.06);border:1px solid rgba(162,59,42,.22)}
+.form-error.show{display:flex}
+.form-error p{margin:0;font-size:14px;line-height:1.5;color:#a23b2a;max-width:none}
+.form-error .pill{padding:9px 18px;font-size:13px}
 
 /* ---------- FAQ ---------- */
 .faq{display:flex;flex-direction:column;gap:0;margin-top:10px;border-top:1px solid var(--hair)}
