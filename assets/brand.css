@@ -281,6 +281,7 @@ p{max-width:64ch}
   .mosaic-card[data-idx="1"]{order:2}
   .mosaic-card[data-idx="2"]{order:3}
   .mosaic-network{order:4}
+  .mosaic-card.mosaic-card--wanted[data-idx="2"]{order:0}
 }
 @media (max-width:480px){
   .leader-head{gap:16px}
